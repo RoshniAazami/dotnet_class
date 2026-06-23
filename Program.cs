@@ -1,26 +1,31 @@
-﻿using System; //overloading constructor
-class Cons
+﻿using System;
+
+class ArithmeticOperation
 {
-    private int sum;
-    public Cons (int a, int b)
+    static void Main()
     {
-        sum=a+b;
-        Console.WriteLine("sum={0}", sum);
-    }
-    public Cons(int a, int b, int c)
-    {
-        sum=a+b+c;
-        Console.WriteLine("sum={0}",sum);
+        double num1, num2;
+
+        Console.Write("Enter first number: ");
+        num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter second number: ");
+        num2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("\n--- Results ---");
+
+        Console.WriteLine("Addition: " + (num1 + num2));
+        Console.WriteLine("Subtraction: " + (num1 - num2));
+        Console.WriteLine("Multiplication: " + (num1 * num2));
+
+        if (num2 != 0)
+            Console.WriteLine("Division: " + (num1 / num2));
+        else
+            Console.WriteLine("Division: Cannot divide by zero");
     }
 }
-class Program
-{
-    static void Main(String[]args)
-    {
-        new Cons(10,20);
-        new Cons(10,20,30);
-    }
-}
-//output
-//sum=30
-//sum=60
+// output
+Addition: 5
+Subtraction: 1
+Multiplication: 6
+Division: 1.5
