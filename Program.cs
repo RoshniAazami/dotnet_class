@@ -1,31 +1,29 @@
 ﻿using System;
 
-class ArithmeticOperation
+class SumArray
 {
     static void Main()
     {
-        double num1, num2;
+        int[] arr = new int[20];
+        int sum = 0;
 
-        Console.Write("Enter first number: ");
-        num1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Enter 20 numbers:");
 
-        Console.Write("Enter second number: ");
-        num2 = Convert.ToDouble(Console.ReadLine());
+        // Input 20 numbers
+        for (int i = 0; i < 20; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
 
-        Console.WriteLine("\n--- Results ---");
+        // Calculate sum
+        for (int i = 0; i < 20; i++)
+        {
+            sum += arr[i];
+        }
 
-        Console.WriteLine("Addition: " + (num1 + num2));
-        Console.WriteLine("Subtraction: " + (num1 - num2));
-        Console.WriteLine("Multiplication: " + (num1 * num2));
+        // Display result
+        Console.WriteLine("Sum of 20 numbers = " + sum);
 
-        if (num2 != 0)
-            Console.WriteLine("Division: " + (num1 / num2));
-        else
-            Console.WriteLine("Division: Cannot divide by zero");
+        Console.ReadLine();
     }
 }
-// output
-Addition: 5
-Subtraction: 1
-Multiplication: 6
-Division: 1.5
