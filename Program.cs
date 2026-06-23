@@ -1,28 +1,54 @@
 ﻿using System;
 
-class SumArray
+class Calculator
 {
     static void Main()
     {
-        int[] arr = new int[20];
-        int sum = 0;
+        int a, b, result;
+        char op;
 
-        Console.WriteLine("Enter 20 numbers:");
+        Console.WriteLine("Enter first number:");
+        a = Convert.ToInt32(Console.ReadLine());
 
-        // Input 20 numbers
-        for (int i = 0; i < 20; i++)
+        Console.WriteLine("Enter operator (+, -, *, /):");
+        op = Convert.ToChar(Console.ReadLine());
+
+        Console.WriteLine("Enter second number:");
+        b = Convert.ToInt32(Console.ReadLine());
+
+        switch(op)
         {
-            arr[i] = Convert.ToInt32(Console.ReadLine());
-        }
+            case '+':
+                result = a + b;
+                Console.WriteLine("Result = " + result);
+                break;
 
-        // Calculate sum
-        for (int i = 0; i < 20; i++)
-        {
-            sum += arr[i];
-        }
+            case '-':
+                result = a - b;
+                Console.WriteLine("Result = " + result);
+                break;
 
-        // Display result
-        Console.WriteLine("Sum of 20 numbers = " + sum);
+            case '*':
+                result = a * b;
+                Console.WriteLine("Result = " + result);
+                break;
+
+            case '/':
+                if(b != 0)
+                {
+                    result = a / b;
+                    Console.WriteLine("Result = " + result);
+                }
+                else
+                {
+                    Console.WriteLine("Cannot divide by zero");
+                }
+                break;
+
+            default:
+                Console.WriteLine("Invalid operator");
+                break;
+        }
 
         Console.ReadLine();
     }
